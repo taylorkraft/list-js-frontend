@@ -8,8 +8,18 @@ class ListsAdapter {
     return fetch(this.baseUrl).then(res => res.json()
     )
   }
+
+  createListItem(value) {
+    const listItem = {
+      body: value,
+    }
+
+    return fetch(this.baseUrl, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({listItem}),
+    })
+  }
 }
-// async getLists() {
-//   const res = await fetch(this.baseUrl)
-//   return await res.json()
-// }
