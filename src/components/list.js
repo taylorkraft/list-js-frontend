@@ -3,4 +3,8 @@ class List {
     this.id = listItemJSON.id
     this.body = listItemJSON.body
   }
+
+  renderLi() {
+    return `<li>${this.body}</li>`
+  }
 }

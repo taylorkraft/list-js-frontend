@@ -23,6 +23,6 @@ class Lists {
 
 
   render() {
-    this.listsContainer.innerHTML = this.lists.map(list => `<li>${list.body}</li>`).join('')
+    this.listsContainer.innerHTML = this.lists.map(list => list.renderLi()).join('')
   }
 }
