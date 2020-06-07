@@ -11,7 +11,6 @@ class Lists {
     .getLists()
     .then(lists => {
       lists.forEach(list => this.lists.push(new List(list)))
-      console.log(this.lists)
     })
     .then(() => {
       this.render()
@@ -20,7 +19,9 @@ class Lists {
 
 
   render() {
+    const listsArray = this.lists.map(list => `<li>${list.body}</li>`)
+    console.log(listsArray)
     const listsContainer = document.getElementById('lists-container')
-    
+    //listsContainer.innerHTML = `${}`
   }
 }
