@@ -7,8 +7,19 @@ class Lists {
   }
 
   fetchAndLoadLists() {
-    this.adapter.getLists().then(lists => {
-      console.log(lists)
+    this.adapter
+    .getLists()
+    .then(lists => {
+      return console.log(lists)
     })
+    .then(() => {
+      this.render()
+    })
+  }
+//once we get lists we call render()
+
+  render() {
+    const listsContainer = document.getElementById('lists-container')
+    listsContainer.innerHTML = "my lists"
   }
 }
