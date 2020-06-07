@@ -2,8 +2,12 @@ class Lists {
   constructor() {
     this.lists = []
     this.adapter = new ListsAdapter()
-    //this.bindEventListeners()
+    this.initBindingsAndEventListeners()
     this.fetchAndLoadLists()
+  }
+
+  initBindingsAndEventListeners() {
+    this.listsContainer = document.getElementById('lists-container')
   }
 
   fetchAndLoadLists() {
@@ -19,7 +23,6 @@ class Lists {
 
 
   render() {
-    const listsContainer = document.getElementById('lists-container')
-    listsContainer.innerHTML = this.lists.map(list => `<li>${list.body}</li>`).join('')
+    this.listsContainer.innerHTML = this.lists.map(list => `<li>${list.body}</li>`).join('')
   }
 }
