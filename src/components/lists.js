@@ -19,9 +19,7 @@ class Lists {
 
 
   render() {
-    const listsArray = this.lists.map(list => `<li>${list.body}</li>`)
-    console.log(listsArray)
     const listsContainer = document.getElementById('lists-container')
-    //listsContainer.innerHTML = `${}`
+    listsContainer.innerHTML = this.lists.map(list => `<li>${list.body}</li>`).join('')
   }
 }
