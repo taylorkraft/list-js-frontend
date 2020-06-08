@@ -11,7 +11,8 @@ class Lists {
     this.newListItemBody = document.getElementById('new-list-item-body')
     this.listItemForm = document.getElementById('new-list-item-form')
     this.listItemForm.addEventListener('submit', this.createListItem.bind(this))
-  }
+    this.listsContainer.addEventListener('dblclick', this.handleItemClick.bind(this))
+    }
 
   createListItem(e) {
     e.preventDefault()
@@ -22,6 +23,11 @@ class Lists {
       this.newListItemBody.value = ''
       this.render()
     })
+  }
+
+  handleItemClick(e) {
+    const li = e.target
+    li.contentEditable = true
   }
 
   fetchAndLoadLists() {
