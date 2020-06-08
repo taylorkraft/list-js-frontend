@@ -23,7 +23,7 @@ class ListsAdapter {
     }).then (res => res.json())
   }
 
-  updateList(value) {
+  updateList(value, id) {
     const list = {
       body: value,
     }
