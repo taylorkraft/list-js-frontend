@@ -22,4 +22,18 @@ class ListsAdapter {
       body: JSON.stringify({list}),
     }).then (res => res.json())
   }
+
+  updateList(value) {
+    const list = {
+      body: value,
+    }
+
+    return fetch(`${this.baseUrl}/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({list}),
+    }).then (res => res.json())
+  }
 }

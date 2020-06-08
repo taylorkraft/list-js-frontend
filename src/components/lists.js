@@ -12,7 +12,7 @@ class Lists {
     this.listItemForm = document.getElementById('new-list-item-form')
     this.listItemForm.addEventListener('submit', this.createListItem.bind(this))
     this.listsContainer.addEventListener('dblclick', this.handleItemClick.bind(this))
-    this.listsContainer.addEventListener('blur', this.updateListItem.bind(this), true)
+    this.listsContainer.addEventListener('blur', this.updateList.bind(this), true)
     }
 
   createListItem(e) {
@@ -32,11 +32,15 @@ class Lists {
     li.classList.add('editable')
   }
 
-  updateListItem(e) {
+  updateList(e) {
     const li = e.target
     li.contentEditable = false
     li.classList.remove('editable')
+    const newValue = li.innerHTML
+    const id = li.dataset.id
+    this.adapter.updateList(newValue, id)
   }
+
   fetchAndLoadLists() {
     this.adapter
     .getLists()
