@@ -1,5 +1,5 @@
 body {
-  font-family: "Times new roman";
+  font-family: "Comic Sans MS", cursive, sans-serif;
   font-weight: 300;
   line-height: 1.6em;
   font-size: 1.3em;
@@ -12,6 +12,7 @@ h1 {
 a {
   color: green;
 }
+
 input {
   font-size: 1.5em;
 }
@@ -22,17 +23,17 @@ input {
   margin-top: 50px;
 }
 
-ul{
+ul {
   padding-left: 20px;
 }
 
-.delete-li-link {
+.delete-list-item-link {
   color: red;
 }
 
-#editable {
+.editable {
   border: 1px solid black;
-  padding: 20px;
+  padding: 5px;
 }
 
 #lists-content {

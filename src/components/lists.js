@@ -12,6 +12,7 @@ class Lists {
     this.listItemForm = document.getElementById('new-list-item-form')
     this.listItemForm.addEventListener('submit', this.createListItem.bind(this))
     this.listsContainer.addEventListener('dblclick', this.handleItemClick.bind(this))
+    this.listsContainer.addEventListener('blur', this.updateListItem.bind(this), true)
     }
 
   createListItem(e) {
@@ -28,8 +29,14 @@ class Lists {
   handleItemClick(e) {
     const li = e.target
     li.contentEditable = true
+    li.classList.add('editable')
   }
 
+  updateListItem(e) {
+    const li = e.target
+    li.contentEditable = false
+    li.classList.remove('editable')
+  }
   fetchAndLoadLists() {
     this.adapter
     .getLists()
