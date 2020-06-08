@@ -20,6 +20,6 @@ class ListsAdapter {
         'content-type': 'application/json',
       },
       body: JSON.stringify({listItem}),
-    })
+    }).then (res => res.json())
   }
 }

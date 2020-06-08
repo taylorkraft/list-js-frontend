@@ -17,7 +17,11 @@ class Lists {
     e.preventDefault()
     const value = this.newListItemBody.value
 
-    this.adapter.createListItem(value)
+    this.adapter.createListItem(value).then(list => {
+      this.lists.push(new List(list))
+      this.newListItemBody.value = ''
+      this.render()
+    })
   }
 
   fetchAndLoadLists() {
@@ -30,7 +34,6 @@ class Lists {
       this.render()
     })
   }
-
 
   render() {
     this.listsContainer.innerHTML = this.lists.map(list => list.renderLi()).join('')
