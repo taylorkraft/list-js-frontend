@@ -10,7 +10,7 @@ class ListsAdapter {
   }
 
   createListItem(value) {
-    const listItem = {
+    const list = {
       body: value,
     }
 
@@ -19,7 +19,7 @@ class ListsAdapter {
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify({listItem}),
+      body: JSON.stringify({list}),
     }).then (res => res.json())
   }
 }
